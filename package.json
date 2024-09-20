@@ -5,13 +5,17 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "build:local": "nuxt build --dotenv .env.build.local",
+    "dev": "nuxt dev --dotenv .env.dev",
     "generate": "nuxt generate",
+    "generate:local": "nuxt generate --dotenv .env.dev",
     "preview": "nuxt preview",
+    "preview:local": "nuxt preview --dotenv .env.build.local",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",
+    "@nuxtjs/i18n": "^8.5.1",
     "nuxt": "^3.13.0",
     "vue": "latest"
   },

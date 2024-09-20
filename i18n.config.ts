@@ -10,6 +10,14 @@ export default defineI18nConfig(() => ({
     alwaysRedirect: true,
   },
   messages: {
-    // language key: messages
+    en: {
+      welcome: 'Welcome'
+    },
+    pl: {
+      welcome: 'Witaj',
+    },
+    ua: {},
+    de: {},
+    ru: {},
   }
 }))

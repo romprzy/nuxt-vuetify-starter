@@ -1,0 +1,76 @@
+<template>
+  <v-app-bar id="the-navbar" density="compact" :collapse="collapsed" class="align-stretch px-4">
+    <v-btn-group divided tile>
+      <v-btn
+        tile
+        :to="localePath('/')"
+      >
+        {{ $t('welcome') }}
+      </v-btn>
+      <v-btn
+        style="color: rgba(var(--v-theme-on-surface))"
+        :to="localePath('home')"
+      >
+        {{ $t('home') }}
+      </v-btn>
+      <v-btn
+        style="color: rgba(var(--v-theme-on-surface))"
+        :to="localePath('about')"
+      >
+        {{ $t('about') }}
+      </v-btn>
+    </v-btn-group>
+
+    <v-spacer />
+
+    <div class="px-4">
+      <div class="mx-n4 d-flex">
+        <v-select
+          class="d-flex align-center"
+          density="compact"
+          tile
+          variant="solo"
+          hide-details
+          :items="locales"
+          :min-width="80"
+          :model-value="locale"
+          @update:modelValue="setLocale($event)"
+        />
+
+        <v-divider vertical />
+
+        <v-btn
+          tile
+          icon="mdi-theme-light-dark"
+          @click="toggleTheme"
+        />
+      </div>
+    </div>
+  </v-app-bar>
+</template>
+
+<script setup>
+const { locale, setLocale } = useI18n()
+const localePath = useLocalePath()
+const locales = ['pl', 'en', 'ru', 'ua', 'de']
+import { useTheme } from 'vuetify'
+
+const theme = useTheme()
+function toggleTheme () {
+  theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark'
+}
+
+const collapsed = ref()
+</script>
+
+<style lang="scss">
+#the-navbar {
+  .v-toolbar__content {
+    //align-items: stretch;
+    //align-content: stretch;
+  }
+
+  .v-toolbar-title__placeholder {
+  }
+}
+</style>

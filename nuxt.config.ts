@@ -1,5 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
+import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
@@ -7,20 +7,16 @@ export default defineNuxtConfig({
   build: {
     transpile: ['vuetify'],
   },
-  modules: [
-    (_options, nuxt) => {
-      nuxt.hooks.hook('vite:extendConfig', (config) => {
-        // @ts-expect-error
-        config.plugins.push(vuetify({ autoImport: true }))
-      })
+  modules: ['@nuxtjs/i18n', 'vuetify-nuxt-module'],
+  vuetify: {
+    moduleOptions: {
+      /* module specific options */
     },
-    '@nuxtjs/i18n',
-  ],
-  vite: {
-    vue: {
-      template: {
-        transformAssetUrls,
-      },
+    vuetifyOptions: {
+      /* vuetify options */
+      theme: {
+        defaultTheme: 'dark'
+      }
     },
   },
   i18n: {

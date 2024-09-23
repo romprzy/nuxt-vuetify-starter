@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   build: {
     transpile: ['vuetify'],
   },
-  modules: ['@nuxtjs/i18n', 'vuetify-nuxt-module'],
+  modules: ['@nuxtjs/i18n', 'vuetify-nuxt-module', '@nuxt/eslint'],
   vuetify: {
     moduleOptions: {
       /* module specific options */
@@ -15,8 +15,8 @@ export default defineNuxtConfig({
     vuetifyOptions: {
       /* vuetify options */
       theme: {
-        defaultTheme: 'dark'
-      }
+        defaultTheme: 'dark',
+      },
     },
   },
   i18n: {

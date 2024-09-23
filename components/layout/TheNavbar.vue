@@ -1,23 +1,28 @@
 <template>
-  <v-app-bar id="the-navbar" density="compact" :collapse="collapsed" class="align-stretch px-4">
+  <v-app-bar
+    id="the-navbar"
+    class="align-stretch px-4"
+    :collapse="collapsed"
+    density="compact"
+  >
     <v-btn-group divided tile>
       <v-btn
         tile
         :to="localePath('/')"
       >
-        {{ $t('welcome') }}
+        {{ $t('Welcome') }}
       </v-btn>
       <v-btn
         style="color: rgba(var(--v-theme-on-surface))"
         :to="localePath('home')"
       >
-        {{ $t('home') }}
+        {{ $t('Home') }}
       </v-btn>
       <v-btn
         style="color: rgba(var(--v-theme-on-surface))"
         :to="localePath('about')"
       >
-        {{ $t('about') }}
+        {{ $t('About') }}
       </v-btn>
     </v-btn-group>
 
@@ -28,20 +33,20 @@
         <v-select
           class="d-flex align-center"
           density="compact"
-          tile
-          variant="solo"
           hide-details
           :items="locales"
           :min-width="80"
           :model-value="locale"
-          @update:modelValue="setLocale($event)"
+          tile
+          variant="solo"
+          @update:model-value="setLocale($event)"
         />
 
         <v-divider vertical />
 
         <v-btn
-          tile
           icon="mdi-theme-light-dark"
+          tile
           @click="toggleTheme"
         />
       </div>
@@ -50,10 +55,10 @@
 </template>
 
 <script setup>
+import { useTheme } from 'vuetify'
 const { locale, setLocale } = useI18n()
 const localePath = useLocalePath()
 const locales = ['pl', 'en', 'ru', 'ua', 'de']
-import { useTheme } from 'vuetify'
 
 const theme = useTheme()
 function toggleTheme () {

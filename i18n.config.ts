@@ -11,13 +11,13 @@ export default defineI18nConfig(() => ({
   },
   messages: {
     en: {
-      welcome: 'Welcome'
+      Welcome: 'Welcome',
     },
     pl: {
-      welcome: 'Witaj',
+      Welcome: 'Witaj',
     },
     ua: {},
     de: {},
     ru: {},
-  }
+  },
 }))

@@ -11,17 +11,19 @@
     "generate:local": "nuxt generate --dotenv .env.dev",
     "preview": "nuxt preview",
     "preview:local": "nuxt preview --dotenv .env.build.local",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint"
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",
-    "@nuxt/eslint": "^0.5.7",
     "@nuxtjs/i18n": "^8.5.1",
     "nuxt": "^3.13.0",
     "vue": "latest",
     "vuetify-nuxt-module": "^0.18.3"
   },
   "devDependencies": {
-    "sass-embedded": "^1.79.2"
+    "@nuxt/eslint": "^0.5.7",
+    "sass-embedded": "^1.79.2",
+    "typescript": "^5.6.2"
   }
 }

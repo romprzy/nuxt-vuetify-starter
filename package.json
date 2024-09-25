@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
+    "build:github": "nuxt build --dotenv .env.build.github",
     "build:local": "nuxt build --dotenv .env.build.local",
     "dev": "nuxt dev --dotenv .env.dev",
     "generate": "nuxt generate",

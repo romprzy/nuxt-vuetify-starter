@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "build:github": "nuxt build --dotenv .env.build.github",
+    "build:github": "NUXT_APP_BASE_URL=/nuxt-vuetify-starter/ npx nuxt build --preset github_pages",
     "build:local": "nuxt build --dotenv .env.build.local",
     "dev": "nuxt dev --dotenv .env.dev",
     "generate": "nuxt generate",

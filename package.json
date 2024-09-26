@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "build": "nuxt build",
     "build:github": "nuxt build --dotenv .env.build.github",
@@ -13,18 +16,19 @@
     "preview": "nuxt preview",
     "preview:local": "nuxt preview --dotenv .env.build.local",
     "postinstall": "nuxt prepare",
+    "start": "node .output/server/index.mjs",
     "lint": "eslint"
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",
+    "@nuxt/eslint": "^0.5.7",
     "@nuxtjs/i18n": "^8.5.1",
     "nuxt": "^3.13.0",
+    "sass-embedded": "^1.79.2",
     "vue": "latest",
     "vuetify-nuxt-module": "^0.18.3"
   },
   "devDependencies": {
-    "@nuxt/eslint": "^0.5.7",
-    "sass-embedded": "^1.79.2",
     "typescript": "^5.6.2"
   }
 }

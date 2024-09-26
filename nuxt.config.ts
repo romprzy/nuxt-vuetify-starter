@@ -1,8 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { defineNuxtConfig } from 'nuxt/config'
 
+const owner = process.env.GITHUB_REPOSITORY_OWNER
+const repository = process.env.GITHUB_REPOSITORY
+const baseURL = repository?.replace(owner, '') || '' + '/'
+
 export default defineNuxtConfig({
   app: {
+    baseURL,
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',

@@ -73,8 +73,8 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build:github
-      - name: Static HTML export with Nuxt
-        run: npm run generate
+#      - name: Static HTML export with Nuxt
+#        run: npm run generate
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

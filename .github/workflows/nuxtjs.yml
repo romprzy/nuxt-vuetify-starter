@@ -76,6 +76,8 @@ jobs:
         run: npx nuxt build --preset github_pages NUXT_APP_BASE_URL=/nuxt-vuetify-starter/
 #      - name: Static HTML export with Nuxt
 #        run: npx nuxt generate --preset github_pages NUXT_APP_BASE_URL=/nuxt-vuetify-starter/
+      - name: Deploy
+        run: npx gh-pages --dotfiles -d NUXT_APP_BASE_URL=/nuxt-vuetify-starter/.output/public
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

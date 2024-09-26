@@ -1,11 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { defineNuxtConfig } from 'nuxt/config'
 
-console.log('env', process.env)
-
 export default defineNuxtConfig({
   app: {
-    baseURL: '/nuxt-vuetify-starter/',
+    baseURL: process.env.RUNNER_ENVIRONMENT === 'github-hosted' ? '/nuxt-vuetify-starter/' : '/',
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',

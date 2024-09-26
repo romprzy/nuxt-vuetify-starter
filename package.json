@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "build": "nuxt build",
     "build:local": "nuxt build --dotenv .env.build.local",
@@ -12,6 +15,7 @@
     "preview": "nuxt preview",
     "preview:local": "nuxt preview --dotenv .env.build.local",
     "postinstall": "nuxt prepare",
+    "start": "node .output/server/index.mjs",
     "lint": "eslint"
   },
   "dependencies": {
